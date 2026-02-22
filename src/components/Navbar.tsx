@@ -160,30 +160,31 @@ export default function Navbar() {
                         )}
                     </div>
 
-                    {/* Desktop CTA */}
-                    <div className="hidden lg:flex items-center gap-6">
+                    {/* Desktop & Mobile Actions */}
+                    <div className="flex items-center gap-2 lg:gap-6">
                         <CountrySelector scrolled={scrolled} />
+
                         <Link
                             href="/contact"
-                            className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5"
+                            className="hidden lg:flex bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5"
                         >
                             Get a Consultation
                         </Link>
-                    </div>
 
-                    {/* Mobile Menu Toggle */}
-                    <button
-                        className="lg:hidden p-2 rounded-lg transition-colors"
-                        onClick={() => setMobileOpen(!mobileOpen)}
-                        aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                        aria-expanded={mobileOpen}
-                    >
-                        {mobileOpen ? (
-                            <X size={24} className={scrolled ? "text-dark" : "text-dark"} />
-                        ) : (
-                            <Menu size={24} className={scrolled ? "text-dark" : "text-dark"} />
-                        )}
-                    </button>
+                        {/* Mobile Menu Toggle */}
+                        <button
+                            className="lg:hidden p-2 rounded-lg transition-colors"
+                            onClick={() => setMobileOpen(!mobileOpen)}
+                            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                            aria-expanded={mobileOpen}
+                        >
+                            {mobileOpen ? (
+                                <X size={24} className="text-dark" />
+                            ) : (
+                                <Menu size={24} className="text-dark" />
+                            )}
+                        </button>
+                    </div>
                 </div>
             </nav>
 
@@ -248,10 +249,6 @@ export default function Navbar() {
                                     </Link>
                                 )
                             )}
-                            <div className="pt-3 border-t border-border flex items-center justify-between">
-                                <span className="text-sm font-medium text-text-secondary">Select Country</span>
-                                <CountrySelector scrolled={true} />
-                            </div>
                             <div className="pt-3">
                                 <Link
                                     href="/contact"
