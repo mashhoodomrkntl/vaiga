@@ -29,7 +29,7 @@ const services: ServiceItem[] = [
     },
     {
         icon: ClipboardCheck,
-        title: "Statutory Audit",
+        title: "Statutory Audit Support",
         description:
             "Conducted to ensure compliance with legal and regulatory requirements across the UAE.",
         details: [

@@ -231,7 +231,7 @@ export default function HomePage() {
     {
       country: "Qatar",
       city: "Doha",
-      address: "Office C-104, Barwa Commercial Avenue",
+      address: "Office 6, 2nd Floor, Building No. 67, Opposite Liverpool John Moores University | Oryx University Doha, Qatar",
       phone: "+974 66437523",
       services: "Audit, Accounting, Software, Consultancy",
       href: "/services/qatar",
@@ -489,7 +489,7 @@ export default function HomePage() {
                     </div>
                     <MapPin size={20} className="text-primary" />
                   </div>
-                  <p className="text-text-secondary text-sm mb-3">
+                  <p className="text-text-secondary text-sm mb-3 line-clamp-1">
                     {office.address}
                   </p>
                   <p className="text-text-muted text-xs mb-4">

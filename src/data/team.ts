@@ -26,7 +26,7 @@ export const teamMembers: TeamMember[] = [
         id: "2",
         name: "CMA Mubashir",
         role: "Managing Director",
-        image: "/mubashir.png",
+        image: "/mubashir.jpeg",
         country: "Qatar",
         isGlobal: true,
         specialization: ["Internal Audit", "Corporate Governance", "SOX Advisory"]

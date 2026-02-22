@@ -42,7 +42,7 @@ const offices = [
     {
         country: "Qatar",
         city: "Doha",
-        address: "Office C-104, 1st Floor, Building No. 22, Barwa Commercial Avenue, Doha, Qatar",
+        address: "Office 6, 2nd Floor, Building No. 67, Opposite Liverpool John Moores University | Oryx University Doha, Qatar",
         phone: "+974 66437523",
         email: "audit@vaiga.org",
         hours: "Sun – Thu: 8:00 AM – 5:00 PM",
