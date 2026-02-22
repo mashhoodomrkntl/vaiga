@@ -430,15 +430,15 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex items-center gap-6 hover:bg-white/10 transition-all duration-300 group cursor-default hover:border-primary/30"
+                className="bg-white/5 border border-white/10 rounded-2xl p-5 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 hover:bg-white/10 transition-all duration-300 group cursor-default hover:border-primary/30"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                   <industry.icon
-                    size={28}
-                    className="text-primary group-hover:scale-110 transition-transform shrink-0"
+                    size={24}
+                    className="text-primary group-hover:scale-110 transition-transform"
                   />
                 </div>
-                <span className="text-white/90 text-sm md:text-base font-bold tracking-tight group-hover:text-white transition-colors">
+                <span className="text-white/90 text-sm md:text-base font-bold tracking-tight group-hover:text-white transition-colors leading-tight">
                   {industry.name}
                 </span>
               </motion.div>
