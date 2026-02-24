@@ -91,6 +91,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://vaiga-xi.vercel.app",
   },
+  verification: {
+    google: "6T8t8TcFYrLaoZKVPq69cH5_Ha4f3_wA1RIgztxeEnc",
+  },
 };
 
 import { CountryProvider } from "@/context/CountryContext";
