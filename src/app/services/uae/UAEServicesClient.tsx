@@ -124,7 +124,7 @@ export default function UAEServicesClient() {
     return (
         <ServicePageLayout
             country="UAE"
-            tagline="Delivering meticulous audit, tax, and financial advisory services to help businesses in the UAE maintain regulatory compliance and achieve financial efficiency."
+            tagline="Empowering UAE businesses with precision-driven financial solutions. As official partners of Zoho and Tally, we deliver expert audit, corporate tax, and VAT consultancy services tailored to the UAE's dynamic regulatory landscape."
             services={services}
         />
     );

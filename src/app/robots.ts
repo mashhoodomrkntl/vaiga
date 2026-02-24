@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: "*",
             allow: "/",
         },
-        sitemap: "https://vaiga.org/sitemap.xml",
+        sitemap: "https://vaiga-xi.vercel.app/sitemap.xml",
     };
 }

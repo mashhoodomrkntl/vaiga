@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://vaiga.org";
+    const baseUrl = "https://vaiga-xi.vercel.app";
 
     return [
         {

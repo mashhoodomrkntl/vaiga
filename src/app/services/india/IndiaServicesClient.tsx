@@ -125,7 +125,7 @@ export default function IndiaServicesClient() {
     return (
         <ServicePageLayout
             country="India"
-            tagline="Providing comprehensive audit, tax, and financial advisory services to ensure compliance, transparency, and optimal financial solutions within the Indian regulatory framework."
+            tagline="Vaiga Consultancy is your premier financial partner in India. As official Tally and Zoho partners, we provide expert audit, GST compliance, and accounting software solutions tailored for the Indian market from our Kerala headquarters."
             services={services}
         />
     );

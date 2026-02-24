@@ -18,7 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vaiga.org"),
+  metadataBase: new URL("https://vaiga-xi.vercel.app"),
   title: {
     default:
       "Vaiga Consultancy | Audit, Tax & Accounting Services in India, UAE & Qatar",
@@ -46,6 +46,15 @@ export const metadata: Metadata = {
     "Malappuram",
     "financial consulting",
     "business advisory",
+    "Best Zoho Partners in Qatar",
+    "Best Financial Consultant Doha",
+    "Tally Prime Implementation Qatar",
+    "Corporate Tax UAE",
+    "VAT consultancy Dubai",
+    "GST consultancy Kerala",
+    "Tax filing Malappuram",
+    "Chartered Accountant Kerala",
+    "ICV Certification Doha",
   ],
   authors: [{ name: "Vaiga Consultancy Services (P) Ltd" }],
   creator: "Vaiga Consultancy Services (P) Ltd",
@@ -53,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vaiga.org",
+    url: "https://vaiga-xi.vercel.app",
     siteName: "Vaiga Consultancy",
     title:
       "Vaiga Consultancy | Audit, Tax & Accounting Services in India, UAE & Qatar",
@@ -80,7 +89,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://vaiga.org",
+    canonical: "https://vaiga-xi.vercel.app",
   },
 };
 
@@ -105,68 +114,81 @@ export default function RootLayout({
           <Footer />
         </CountryProvider>
 
-        {/* Organization JSON-LD */}
+        {/* Organization & Multi-Location JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Vaiga Consultancy Services (P) Ltd",
-              url: "https://vaiga.org",
-              logo: "https://vaiga.org/logo.png",
-              foundingDate: "2011",
-              description:
-                "Professional auditing, tax advisory, and accounting consultancy firm with operations in India, UAE, and Qatar.",
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+91-89432-02011",
-                  contactType: "customer service",
-                  areaServed: "IN",
-                  availableLanguage: ["English", "Hindi", "Malayalam"],
-                },
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+971-52-390-2880",
-                  contactType: "customer service",
-                  areaServed: "AE",
-                  availableLanguage: ["English", "Arabic"],
-                },
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+974-66437523",
-                  contactType: "customer service",
-                  areaServed: "QA",
-                  availableLanguage: ["English", "Arabic"],
-                },
-              ],
-              address: [
-                {
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Vaiga Consultancy Services (P) Ltd",
+                "url": "https://vaiga-xi.vercel.app",
+                "logo": "https://vaiga-xi.vercel.app/logo.png",
+                "foundingDate": "2011",
+                "description": "Professional auditing, tax advisory, and accounting consultancy firm with operations in India, UAE, and Qatar.",
+                "sameAs": []
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Vaiga Consultancy — Qatar (Best Zoho Partners & Financial Consultants)",
+                "image": "https://vaiga-xi.vercel.app/vaiga_logo.png",
+                "@id": "https://vaiga-xi.vercel.app/services/qatar",
+                "url": "https://vaiga-xi.vercel.app/services/qatar",
+                "telephone": "+974-66437523",
+                "address": {
                   "@type": "PostalAddress",
-                  streetAddress: "Vaiga Bhawan, Tirur Road, Puthanathani",
-                  addressLocality: "Malappuram",
-                  addressRegion: "Kerala",
-                  postalCode: "676551",
-                  addressCountry: "IN",
+                  "streetAddress": "Office C-104, 1st Floor, Building No. 22, Barwa Commercial Avenue",
+                  "addressLocality": "Doha",
+                  "addressCountry": "QA"
                 },
-                {
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 25.2854,
+                  "longitude": 51.5310
+                },
+                "servesCuisine": "N/A",
+                "priceRange": "$$",
+                "description": "Best Zoho Partners and Financial Consultants in Qatar. Specialist in Tally Prime, Audit, and Tax advisory."
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Vaiga Consultancy — UAE",
+                "image": "https://vaiga-xi.vercel.app/vaiga_logo.png",
+                "@id": "https://vaiga-xi.vercel.app/services/uae",
+                "url": "https://vaiga-xi.vercel.app/services/uae",
+                "telephone": "+971-52-390-2880",
+                "address": {
                   "@type": "PostalAddress",
-                  streetAddress:
-                    "M16, RKM Building, Near Al Qiyadah Metro Station",
-                  addressLocality: "Dubai",
-                  addressCountry: "AE",
+                  "streetAddress": "M16, RKM Building, Near Al Qiyadah Metro Station",
+                  "addressLocality": "Dubai",
+                  "addressCountry": "AE"
                 },
-                {
+                "priceRange": "$$",
+                "description": "Expert Audit, VAT, and Tax consultancy services in Dubai, UAE."
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Vaiga Consultancy — India",
+                "image": "https://vaiga-xi.vercel.app/vaiga_logo.png",
+                "@id": "https://vaiga-xi.vercel.app/services/india",
+                "url": "https://vaiga-xi.vercel.app/services/india",
+                "telephone": "+91-89432-02011",
+                "address": {
                   "@type": "PostalAddress",
-                  streetAddress:
-                    "Office C-104, 1st Floor, Building No. 22, Barwa Commercial Avenue",
-                  addressLocality: "Doha",
-                  addressCountry: "QA",
+                  "streetAddress": "Vaiga Bhawan, Tirur Road, Puthanathani",
+                  "addressLocality": "Malappuram",
+                  "addressRegion": "Kerala",
+                  "postalCode": "676551",
+                  "addressCountry": "IN"
                 },
-              ],
-              sameAs: [],
-            }),
+                "priceRange": "$$",
+                "description": "Trusted Chartered Accountant and Tax consultancy services in Malappuram, Kerala, India."
+              }
+            ])
           }}
         />
         <Script

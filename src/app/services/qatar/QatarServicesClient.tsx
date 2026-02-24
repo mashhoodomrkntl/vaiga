@@ -93,7 +93,7 @@ export default function QatarServicesClient() {
     return (
         <ServicePageLayout
             country="Qatar"
-            tagline="Offering precise and reliable audit, tax, and financial consulting services to meet Qatar's regulatory requirements and optimize your financial strategies."
+            tagline="Vaiga Consultancy is your trusted partner for financial excellence in Doha. As leading Zoho Partners and Financial Consultants in Qatar, we provide expert audit, tax, and accounting software solutions like Tally Prime and Odoo to streamline your business operations."
             services={services}
         />
     );

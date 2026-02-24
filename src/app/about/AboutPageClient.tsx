@@ -46,16 +46,17 @@ const timeline = [
     { year: "2019", title: "Qatar Operations", desc: "Opened our Doha office, strengthening our GCC presence." },
     { year: "2022", title: "2000+ Clients", desc: "Crossed the milestone of serving 2000 global clients across industries." },
     { year: "2025", title: "Digital Transformation", desc: "Embracing technology with advanced accounting software solutions." },
+    { year: "2026", title: "Zoho & Tally Partnerships", desc: "Became official partners for Zoho and Tally, leading the digital transformation in auditing." },
 ];
 
 export default function AboutPageClient() {
     const { country } = useCountry();
 
     const aboutHeroContent = {
-        Global: "A consulting firm headquartered in Kerala, India, with operations extending to Qatar and UAE. Specializing in audits, tax advisory, and financial consulting since 2011.",
-        India: "A premier consulting firm headquartered in Kerala, India. Specializing in local audits, tax compliance, and financial advisory for the Indian market since 2011.",
-        UAE: "Expert consultancy firm with strong operations in Dubai. Specializing in GCC VAT, audit services, and strategic advisory since our expansion in 2017.",
-        Qatar: "Leading consultancy firm in Doha. Specializing in auditing, accounting software implementation, and financial advisory for Qatar's diverse business landscape.",
+        Global: "A premier consulting firm and official Zoho & Tally partner headquartered in Kerala, India, with operations extending to Qatar and UAE. Specializing in audits, tax advisory, and digital accounting solutions since 2011.",
+        India: "A premier consulting firm and official Tally & Zoho partner headquartered in Kerala. Specializing in local audits, GST compliance, and financial advisory since 2011.",
+        UAE: "Expert consultancy firm and official Zoho partner in Dubai. Specializing in GCC VAT, audit services, and strategic digital accounting solutions since 2017.",
+        Qatar: "Leading Zoho Books partner and financial consultancy in Doha. Specializing in auditing, Tally implementation, and financial advisory for Qatar's diverse business landscape.",
     };
 
     const currentStats = country === "Global"
@@ -167,14 +168,14 @@ export default function AboutPageClient() {
                             <div className="space-y-4 text-text-secondary text-sm md:text-base leading-relaxed">
                                 <p>
                                     Vaiga Consultancy Services (P) Ltd is a premier consulting firm headquartered in Kerala, India. {country === "Global"
-                                        ? "With operations extending across India, Qatar, and UAE, we serve a multinational clientele."
-                                        : `With a strong presence and specialized expertise in ${country}, we serve businesses with local insight and global standards.`} Founded in 2011, we have grown from a small team of dedicated professionals to a multinational organization serving over 2000 clients.
+                                        ? "With operations extending across India, Qatar, and UAE, we serve a multinational clientele as official partners for leading accounting software."
+                                        : `With a strong presence and specialized expertise in ${country}, we serve businesses as official Zoho and Tally partners, combining local insight with global standards.`} Founded in 2011, we have grown from a small team of dedicated professionals to a multinational organization serving over 2000 clients.
                                 </p>
                                 <p>
-                                    We specialize in Internal Audits, System Audits, Indirect Tax, Direct Tax, Company Laws, FEMA, and comprehensive Accounting and Bookkeeping Services. Our team of seasoned professionals brings deep expertise in auditing, financial analysis, tax planning, project financing, and advisory services.
+                                    We specialize in Internal Audits, System Audits, Indirect Tax, Direct Tax, Company Laws, and comprehensive Accounting Software Implementation (Zoho Books, Tally Prime, Odoo). Our team of seasoned professionals brings deep expertise in auditing, financial analysis, tax planning, and digital business advisory.
                                 </p>
                                 <p>
-                                    Known for our unwavering commitment to confident leadership, professional ethics, and quality client relationships, we deliver top-notch consultancy solutions at competitive rates, ensuring client satisfaction through integrity, dedication, and professionalism.
+                                    As trusted Zoho Partners and Financial Consultants, we are known for our unwavering commitment to professional ethics and quality client relationships. We deliver top-notch consultancy solutions at competitive rates, ensuring client success through integrity and digital excellence.
                                 </p>
                             </div>
                         </motion.div>
@@ -353,7 +354,7 @@ export default function AboutPageClient() {
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
-                                href="https://vaiga.org/assets/VaigaConsultanyServices.pdf"
+                                href="https://vaiga-xi.vercel.app/assets/VaigaConsultanyServices.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-primary/25 hover:-translate-y-0.5"

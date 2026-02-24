@@ -6,13 +6,13 @@ export const metadata: Metadata = {
     description:
         "Get in touch with Vaiga Consultancy. Offices in Malappuram (India), Dubai (UAE), and Doha (Qatar). Call, email, or visit us today.",
     alternates: {
-        canonical: "https://vaiga.org/contact",
+        canonical: "https://vaiga-xi.vercel.app/contact",
     },
     openGraph: {
         title: "Contact Vaiga Consultancy | India, Dubai & Qatar Offices",
         description:
             "Get in touch with our offices in India, Dubai, and Qatar.",
-        url: "https://vaiga.org/contact",
+        url: "https://vaiga-xi.vercel.app/contact",
     },
 };
 
