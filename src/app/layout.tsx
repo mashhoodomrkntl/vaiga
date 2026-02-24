@@ -170,23 +170,16 @@ export default function RootLayout({
           }}
         />
         <Script
-          id="zoho-salesiq-config"
+          id="zoho-salesiq-ready"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var $zoho = $zoho || {};
-              $zoho.salesiq = $zoho.salesiq || {
-                widgetcode: "siq8d9ff53f33a09132a2dc9bfc39beaecc161891d92bdfc7feafb161a390155a3f9fdb0ec54d8993f26ab2d1b805c83e04",
-                values: {},
-                ready: function(){}
-              };
-            `,
-          }}
-        />
+        >
+          {`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
+        </Script>
         <Script
-          id="zoho-salesiq-script"
-          src="https://salesiq.zoho.com/widget"
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siq8d9ff53f33a09132a2dc9bfc39beaecc161891d92bdfc7feafb161a390155a3f9fdb0ec54d8993f26ab2d1b805c83e04"
           strategy="afterInteractive"
+          defer
         />
       </body>
     </html>
