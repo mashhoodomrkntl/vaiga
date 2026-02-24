@@ -39,8 +39,13 @@ export default function Navbar() {
         return "/services/india"; // Default or global
     };
 
+    const getHomeHref = () => {
+        if (country === "Global") return "/";
+        return `/${country.toLowerCase()}`;
+    };
+
     const dynamicNavLinks = [
-        { label: "Home", href: "/" },
+        { label: "Home", href: getHomeHref() },
         { label: "About", href: "/about" },
         {
             label: "Services",
@@ -79,7 +84,7 @@ export default function Navbar() {
             <nav className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 group" aria-label="Vaiga Consultancy Home">
+                    <Link href={getHomeHref()} className="flex items-center gap-3 group" aria-label="Vaiga Consultancy Home">
                         <div className="relative w-14 h-14 transition-all duration-300 group-hover:scale-105">
                             <Image
                                 src="/vaiga_logo.png"

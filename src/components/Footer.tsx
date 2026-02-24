@@ -8,16 +8,19 @@ import {
     ArrowUpRight,
     Building2,
 } from "lucide-react";
-import { useCountry } from "@/context/CountryContext";
+import { useCountry, Country } from "@/context/CountryContext";
 
-const quickLinks = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Services — India", href: "/services/india" },
-    { label: "Services — UAE", href: "/services/uae" },
-    { label: "Services — Qatar", href: "/services/qatar" },
-    { label: "Contact Us", href: "/contact" },
-];
+const getQuickLinks = (country: Country) => {
+    const homeHref = country === "Global" ? "/" : `/${country.toLowerCase()}`;
+    return [
+        { label: "Home", href: homeHref },
+        { label: "About Us", href: "/about" },
+        { label: "Services — India", href: "/services/india" },
+        { label: "Services — UAE", href: "/services/uae" },
+        { label: "Services — Qatar", href: "/services/qatar" },
+        { label: "Contact Us", href: "/contact" },
+    ];
+};
 
 const services = [
     "Audit & Assurance",
@@ -53,6 +56,8 @@ export default function Footer() {
     const { country } = useCountry();
 
     const filteredOffices = offices.filter(o => country === "Global" || o.country === country);
+    const homeHref = country === "Global" ? "/" : `/${country.toLowerCase()}`;
+    const dynamicQuickLinks = getQuickLinks(country);
 
     return (
         <footer className="bg-dark text-white relative overflow-hidden">
@@ -90,7 +95,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
                     {/* Company Info */}
                     <div className="lg:col-span-1">
-                        <Link href="/" className="flex items-center gap-3 mb-6 group">
+                        <Link href={homeHref} className="flex items-center gap-3 mb-6 group">
                             <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                     src="/vaiga_logo.png"
@@ -117,7 +122,7 @@ export default function Footer() {
                             Quick Links
                         </h4>
                         <ul className="space-y-3">
-                            {quickLinks.map((link) => (
+                            {dynamicQuickLinks.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
