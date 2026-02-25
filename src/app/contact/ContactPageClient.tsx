@@ -8,6 +8,9 @@ import {
     Clock,
     Send,
     MessageCircle,
+    Facebook,
+    Instagram,
+    Linkedin,
 } from "lucide-react";
 import { useCountry } from "@/context/CountryContext";
 
@@ -246,6 +249,42 @@ export default function ContactPageClient() {
                                             +91 89432 02011
                                         </a>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-10">
+                                <h4 className="text-navy font-bold text-lg mb-6">Follow Our Updates</h4>
+                                <div className="flex gap-4">
+                                    <a
+                                        href="https://www.facebook.com/vaigaconsultancy"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 rounded-xl bg-white border border-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+                                        aria-label="Vaiga Facebook"
+                                    >
+                                        <Facebook size={20} />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/vaiga_consultancyservices/?hl=en"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 rounded-xl bg-white border border-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+                                        aria-label="Vaiga Instagram"
+                                    >
+                                        <Instagram size={20} />
+                                    </a>
+                                    <a
+                                        href={country === "Qatar"
+                                            ? "https://www.linkedin.com/company/vaiga-consultancy-services-qatar/posts/?feedView=all"
+                                            : "https://www.linkedin.com/company/vaiga-consultancy-services/posts/?feedView=all"
+                                        }
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 rounded-xl bg-white border border-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+                                        aria-label="Vaiga LinkedIn"
+                                    >
+                                        <Linkedin size={20} />
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>

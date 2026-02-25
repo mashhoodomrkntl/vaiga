@@ -7,6 +7,9 @@ import {
     Mail,
     ArrowUpRight,
     Building2,
+    Facebook,
+    Instagram,
+    Linkedin,
 } from "lucide-react";
 import { useCountry, Country } from "@/context/CountryContext";
 
@@ -110,9 +113,41 @@ export default function Footer() {
                                 ? "Professional auditing, tax advisory, and financial consulting since 2011. Trusted by businesses across India, UAE, and Qatar."
                                 : `Professional auditing, tax advisory, and financial consulting in ${country} since 2011.`}
                         </p>
-                        <div className="flex items-center gap-2 text-xs text-white/40">
+                        <div className="flex items-center gap-2 text-xs text-white/40 mb-6">
                             <Building2 size={14} />
                             <span>Established 2011</span>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <a
+                                href="https://www.facebook.com/vaigaconsultancy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary transition-all duration-300 pointer-events-auto"
+                                aria-label="Vaiga Facebook"
+                            >
+                                <Facebook size={16} />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/vaiga_consultancyservices/?hl=en"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary transition-all duration-300 pointer-events-auto"
+                                aria-label="Vaiga Instagram"
+                            >
+                                <Instagram size={16} />
+                            </a>
+                            <a
+                                href={country === "Qatar"
+                                    ? "https://www.linkedin.com/company/vaiga-consultancy-services-qatar/posts/?feedView=all"
+                                    : "https://www.linkedin.com/company/vaiga-consultancy-services/posts/?feedView=all"
+                                }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary transition-all duration-300 pointer-events-auto"
+                                aria-label="Vaiga LinkedIn"
+                            >
+                                <Linkedin size={16} />
+                            </a>
                         </div>
                     </div>
 
