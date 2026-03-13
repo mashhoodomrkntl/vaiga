@@ -90,9 +90,8 @@ export default function Navbar() {
                                 src="/vaiga_logo.png"
                                 alt="Vaiga Consultancy Logo"
                                 fill
-                                className="object-cover rounded-lg"
+                                className="object-cover"
                                 priority
-
                             />
                         </div>
                     </Link>

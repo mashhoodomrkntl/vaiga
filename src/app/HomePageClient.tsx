@@ -59,17 +59,17 @@ const services = [
     },
     {
         icon: Calculator,
-        title: "Accounting Services",
+        title: "Accounting & Bookkeeping",
         description:
             "Full-spectrum outsourced accounting and bookkeeping tailored to your business needs.",
-        items: ["Bookkeeping", "Financial Reports", "Bank Reconciliation", "Payroll"],
+        items: ["Outsourced Accounting", "Bookkeeping", "Financial Reports", "Bank Reconciliation"],
     },
     {
         icon: MonitorSmartphone,
         title: "Software Solutions",
         description:
             "Implementation and training for Tally Prime, Zoho Books, and Odoo accounting platforms.",
-        items: ["Tally Prime", "Zoho Books", "Odoo", "Migration"],
+        items: ["Zoho Books", "Odoo", "Tally Prime", "Power BI Dashboards"],
     },
 ];
 
@@ -87,8 +87,8 @@ const industries = [
 
 const stats = [
     { end: 2000, suffix: "+", label: "Happy Clients" },
-    { end: 500, suffix: "+", label: "Projects Finished" },
-    { end: 50, suffix: "+", label: "Professionals" },
+    { end: 70, suffix: "+", label: "ERP implementations" },
+    { end: 100, suffix: "+", label: "Professionals" },
     { end: 3, suffix: "", label: "Countries" },
 ];
 
@@ -194,7 +194,7 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
     const heroContent = {
         Global: {
             title: "Unlock Your Business's Full Potential",
-            desc: "Professional auditing, tax advisory, and financial consulting across India, UAE & Qatar. We help businesses navigate complexities with integrity and expertise.",
+            desc: "Professional auditing, tax advisory, financial consulting and ERP Consultation & implementation across India, UAE & Qatar. We help businesses navigate complexities with integrity and expertise.",
         },
         India: {
             title: "Elevate Your Business in India",
@@ -206,7 +206,7 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
         },
         Qatar: {
             title: "Empower Your Business in Qatar",
-            desc: "Comprehensive auditing, accounting software implementation, and tax advisory for businesses across Doha and beyond.",
+            desc: "Comprehensive internal auditing, accounting software implementation, statutory audit support, virtual CFO services for businesses across Doha and beyond.",
         },
     };
 
