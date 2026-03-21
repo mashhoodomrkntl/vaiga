@@ -143,7 +143,7 @@ export default function ClientsSection() {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
+                            transition={{ delay: (index % clients.length) * 0.05 }}
                             className="flex-shrink-0 w-[180px] md:w-[220px] flex items-center justify-center p-5 rounded-2xl bg-white border border-border/50 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group cursor-default h-32"
                         >
                             <div className="relative w-full h-full transition-all duration-500 p-2">

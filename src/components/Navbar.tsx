@@ -9,21 +9,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import CountrySelector from "./CountrySelector";
 import { useCountry } from "@/context/CountryContext";
 
-const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    {
-        label: "Services",
-        href: "/services",
-        children: [
-            { label: "India", href: "/services/india" },
-            { label: "UAE", href: "/services/uae" },
-            { label: "Qatar", href: "/services/qatar" },
-        ],
-    },
-    { label: "Contact", href: "/contact" },
-    { label: "Blog", href: "/blog" },
-];
 
 export default function Navbar() {
     const { country } = useCountry();

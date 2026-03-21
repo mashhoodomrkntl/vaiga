@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useCountry, Country } from "@/context/CountryContext";
 import { Globe, ChevronDown, Check } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -57,25 +58,19 @@ export default function CountrySelector({ scrolled }: { scrolled?: boolean }) {
                     >
                         <div className="py-1">
                             {countries.map((c) => (
-                                <button
+                                <Link
                                     key={c.value}
+                                    href={c.value === "Global" ? "/" : `/${c.value.toLowerCase()}`}
                                     onClick={() => {
                                         setCountry(c.value);
                                         setIsOpen(false);
-
-                                        // Navigate to the regional home page for better SEO indexing
-                                        if (c.value === "Global") {
-                                            router.push("/");
-                                        } else {
-                                            router.push(`/${c.value.toLowerCase()}`);
-                                        }
                                     }}
                                     className={`w-full flex items-center justify-between px-4 py-2.5 text-xs transition-colors hover:bg-primary-50 ${country === c.value ? "text-primary bg-primary-50 font-bold" : "text-text-primary"
                                         }`}
                                 >
                                     {c.label}
                                     {country === c.value && <Check size={14} className="text-primary" />}
-                                </button>
+                                </Link>
                             ))}
                         </div>
                     </motion.div>

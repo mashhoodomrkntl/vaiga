@@ -228,7 +228,7 @@ export default function Footer() {
                 {/* Bottom bar */}
                 <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-center gap-4">
                     <p className="text-white/40 text-xs">
-                        © {new Date().getFullYear()} Vaiga Consultancy Services (P) Ltd. All rights reserved.
+                        © 2026 Vaiga Consultancy Services (P) Ltd. All rights reserved.
                     </p>
                 </div>
             </div>

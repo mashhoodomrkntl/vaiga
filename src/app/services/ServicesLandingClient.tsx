@@ -9,21 +9,18 @@ const countryServices = [
         name: "India",
         description: "Comprehensive audit, tax, and secretarial compliance services tailored for the Indian regulatory landscape.",
         href: "/services/india",
-        icon: "/india_flag.png", // Or a generic icon if flag not available, using MapPin for now
         highlights: ["Audit & Assurance", "Tax Advisory", "Secretarial Compliance"]
     },
     {
         name: "UAE",
         description: "Expert VAT consultancy, internal audit, and corporate tax filing for businesses across the Emirates.",
         href: "/services/uae",
-        icon: "/uae_flag.png",
         highlights: ["Internal Audit", "Corporate Tax", "GCC VAT Services"]
     },
     {
         name: "Qatar",
         description: "Precision-focused financial consulting, statutory audit support, and software implementation in Doha.",
         href: "/services/qatar",
-        icon: "/qatar_flag.png",
         highlights: ["Statutory Audit", "Accounting Support", "Project Appraisals"]
     }
 ];
@@ -112,12 +109,12 @@ export default function ServicesLandingClient() {
                             </p>
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="flex flex-col gap-2">
-                                    <span className="text-primary font-bold text-2xl">12+</span>
+                                    <span className="text-primary font-bold text-2xl">13+</span>
                                     <span className="text-white/60 text-sm">Years Expertise</span>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <span className="text-primary font-bold text-2xl">4</span>
-                                    <span className="text-white/60 text-sm">Global Hubs</span>
+                                    <span className="text-primary font-bold text-2xl">3</span>
+                                    <span className="text-white/60 text-sm">Global Offices</span>
                                 </div>
                             </div>
                         </motion.div>
