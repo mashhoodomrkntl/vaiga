@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import type { BlogPost } from "@/types/blog";
 
@@ -113,10 +114,11 @@ export default function BlogPostContent({ blog, sanitizedContent }: BlogPostCont
                         transition={{ duration: 0.8 }}
                         className="relative aspect-video rounded-3xl overflow-hidden mb-12 shadow-2xl"
                     >
-                        <img
+                        <Image
                             src={blog.image}
                             alt={blog.title}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
                         />
                     </motion.div>
 

@@ -26,11 +26,18 @@ import {
     Award,
     Calendar,
     Clock,
+    FileCheck,
+    Search,
+    Stamp,
+    ClipboardCheck,
+    FileBarChart,
+    Receipt,
 } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import { blogs } from "@/data/blogs";
+import { servicesData } from "@/data/services";
 import { useCountry, Country } from "@/context/CountryContext";
 import ClientsSection from "@/components/ClientsSection";
 import { useEffect } from "react";
@@ -42,36 +49,20 @@ const fadeInUp = {
     transition: { duration: 0.6 },
 };
 
-const services = [
-    {
-        icon: ShieldCheck,
-        title: "Audit & Assurance",
-        description:
-            "IFRS Consulting, Internal Audit, Financial Audit, and Risk Assurance to safeguard your business.",
-        items: ["Internal Audit", "Financial Audit", "IFRS Consulting", "Risk Assurance"],
-    },
-    {
-        icon: FileText,
-        title: "Tax & Regulatory",
-        description:
-            "Comprehensive tax consultancy, GCC VAT, and regulatory compliance across India, UAE & Qatar.",
-        items: ["Tax Consultancy", "GCC VAT", "Tax Filing", "Tax Strategy"],
-    },
-    {
-        icon: Calculator,
-        title: "Accounting & Bookkeeping",
-        description:
-            "Full-spectrum outsourced accounting and bookkeeping tailored to your business needs.",
-        items: ["Outsourced Accounting", "Bookkeeping", "Financial Reports", "Bank Reconciliation"],
-    },
-    {
-        icon: MonitorSmartphone,
-        title: "Software Solutions",
-        description:
-            "Implementation and training for Tally Prime, Zoho Books, and Odoo accounting platforms.",
-        items: ["Zoho Books", "Odoo", "Tally Prime", "Power BI Dashboards"],
-    },
-];
+const iconMap: Record<string, any> = {
+    ShieldCheck,
+    FileText,
+    Calculator,
+    MonitorSmartphone,
+    Briefcase,
+    FileCheck,
+    Search,
+    Building2,
+    Stamp,
+    ClipboardCheck,
+    FileBarChart,
+    Receipt,
+};
 
 const industries = [
     { icon: Landmark, name: "Financial Services" },
@@ -211,6 +202,7 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
     };
 
     const currentHero = heroContent[effectiveCountry];
+    const countryServices = servicesData[effectiveCountry];
 
     const filteredTestimonials = testimonials.filter(t =>
         effectiveCountry === "Global" || t.location.includes(effectiveCountry)
@@ -275,7 +267,7 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-10 backdrop-blur-md"
                         >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                            <span className="text-primary-800 text-[10px] font-bold uppercase tracking-[0.25em]">
+                            <span className="text-primary-800 text-xs font-bold uppercase tracking-[0.25em]">
                                 {effectiveCountry === "Global" ? "Global Consultancy Excellence" : `${effectiveCountry} Operations`}
                             </span>
                         </motion.div>
@@ -320,9 +312,54 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 1, duration: 1 }}
-                            className="mt-14 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-40 grayscale hover:grayscale-0 transition-all duration-500"
+                            className="mt-16 pt-10 border-t border-primary/10 flex flex-col justify-center items-center gap-6"
                         >
-                            <span className="text-xs font-bold tracking-widest text-navy uppercase">Trusted by 2000+ Businesses</span>
+                            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-navy/50 uppercase">Trusted Partners & Certifications</span>
+                            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 opacity-80 transition-all duration-500">
+                                <a href="https://www.zoho.com/partners/find-partner-profile.html?partnerid=zkms01370000000123735d48a7bf3728b470a928c864dfb3db65" className="flex items-center gap-3 group">
+                                    <div className="w-32 h-20 rounded-2xl bg-white border border-primary/10 flex items-center justify-center shadow-sm group-hover:rotate-6 transition-transform overflow-hidden p-2">
+                                        <Image
+                                            src="/zoho_logo.png"
+                                            alt="Zoho Partner"
+                                            width={100}
+                                            height={100}
+                                            className="object-contain"
+                                            loading="lazy"
+                                        />
+                                    </div>
+
+                                    <span
+                                        className="text-sm font-bold text-navy tracking-tight group-hover:text-primary transition-colors">Zoho Authorized Partner</span>
+                                </a>
+                                <a href="https://tallysolutions.com/mena/partners/?srsltid=AfmBOopzsbZluoVH0cXb9hfne2oMwkNHE9jhk3OJPW9pCaEhI4ph23eY" className="flex items-center gap-3 group">
+                                    <div className="w-32 h-20 rounded-2xl bg-white border border-navy/10 flex items-center justify-center  shadow-sm group-hover:-rotate-6 transition-transform overflow-hidden p-2">
+                                        <Image
+                                            src="/tally_logo.webp"
+                                            alt="Tally Partner"
+                                            width={100}
+                                            height={100}
+                                            className="object-contain"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <span className="text-sm font-bold text-navy tracking-tight group-hover:text-[#C5A059] transition-colors">Tally  Authorized Partner</span>
+                                </a>
+                                <a href="https://www.zoho.com/qa/books/accountant/find-accountant.html" className="flex items-center gap-3 group">
+                                    <div className="w-32 h-20 rounded-2xl bg-white border border-primary/10 flex items-center justify-center shadow-sm group-hover:rotate-6 transition-transform overflow-hidden p-2">
+                                        <Image
+                                            src="/zoho_logo.png"
+                                            alt="Zoho Partner"
+                                            width={100}
+                                            height={100}
+                                            className="object-contain"
+                                            loading="lazy"
+                                        />
+                                    </div>
+
+                                    <span
+                                        className="text-sm font-bold text-navy tracking-tight group-hover:text-primary transition-colors">Zoho Finance  Advisor</span>
+                                </a>
+                            </div>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -346,40 +383,43 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                     </motion.div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={service.title}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                viewport={{ once: true }}
-                                className="bg-white rounded-2xl p-6 md:p-7 border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group"
-                            >
-                                <div className="w-14 h-14 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
-                                    <service.icon
-                                        size={26}
-                                        className="text-primary group-hover:text-white transition-colors duration-300"
-                                    />
-                                </div>
-                                <h3 className="font-[var(--font-heading)] font-bold text-lg text-text-primary mb-2">
-                                    {service.title}
-                                </h3>
-                                <p className="text-text-secondary text-sm mb-4 leading-relaxed">
-                                    {service.description}
-                                </p>
-                                <ul className="space-y-2">
-                                    {service.items.map((item) => (
-                                        <li
-                                            key={item}
-                                            className="flex items-center gap-2 text-text-muted text-xs"
-                                        >
-                                            <CheckCircle2 size={14} className="text-primary shrink-0" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        ))}
+                        {countryServices.map((service, index) => {
+                            const IconComponent = iconMap[service.icon] || ShieldCheck;
+                            return (
+                                <motion.div
+                                    key={service.title}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                                    viewport={{ once: true }}
+                                    className="bg-white rounded-2xl p-6 md:p-7 border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group"
+                                >
+                                    <div className="w-14 h-14 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
+                                        <IconComponent
+                                            size={26}
+                                            className="text-primary group-hover:text-white transition-colors duration-300"
+                                        />
+                                    </div>
+                                    <h3 className="font-[var(--font-heading)] font-bold text-lg text-text-primary mb-2">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-text-secondary text-sm mb-4 leading-relaxed">
+                                        {service.description}
+                                    </p>
+                                    <ul className="space-y-2">
+                                        {service.items.map((item) => (
+                                            <li
+                                                key={item}
+                                                className="flex items-center gap-2 text-text-muted text-xs"
+                                            >
+                                                <CheckCircle2 size={14} className="text-primary shrink-0" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            );
+                        })}
                     </div>
 
                     <motion.div {...fadeInUp} className="text-center mt-12">
@@ -622,11 +662,16 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                     </div>
                                     <h3 className="font-bold text-lg text-navy mb-2">Zoho Partner</h3>
                                     <p className="text-text-secondary/60 text-xs leading-relaxed font-medium mb-4">
-                                        Official Authorised Partner for global cloud accounting implementation.
+                                        Official Authorised Partner for ERP implementation.
                                     </p>
-                                    <span className="text-primary text-[10px] font-black uppercase tracking-widest bg-primary/5 px-3 py-1 rounded-full border border-primary/10">
-                                        Implementation
-                                    </span>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Implementation', 'Customization', 'Training', 'Migration'].map((item, index) => (
+                                            <span key={index} className="text-primary text-xs font-black tracking-widest bg-primary/5 px-3 py-1 rounded-full border border-primary/10">
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+
                                 </motion.div>
 
                                 <motion.div
@@ -649,11 +694,15 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                     </div>
                                     <h3 className="font-bold text-lg text-navy mb-2">Tally Partner</h3>
                                     <p className="text-text-secondary/60 text-xs leading-relaxed font-medium mb-4">
-                                        Authorized Partner for Tally.ERP9 and TallyPrime solutions.
+                                        Authorized Partner for TallyPrime solutions.
                                     </p>
-                                    <span className="text-navy text-[10px] font-black uppercase tracking-widest bg-navy/5 px-3 py-1 rounded-full border border-navy/10">
-                                        Expert Solutions
-                                    </span>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['Implementation', 'Customization', 'Training', 'Migration'].map((item, index) => (
+                                            <span key={index} className="text-navy text-xs font-black  tracking-widest bg-navy/5 px-3 py-1 rounded-full border border-navy/10">
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </motion.div>
                             </div>
 
@@ -730,10 +779,11 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                 className="group flex flex-col"
                             >
                                 <Link href={`/blog/${blog.slug}`} className="relative h-64 rounded-3xl overflow-hidden mb-6 block border border-border">
-                                    <img
+                                    <Image
                                         src={blog.image}
                                         alt={blog.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute top-4 left-4">
                                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-lg text-primary text-xs font-bold">

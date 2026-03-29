@@ -62,7 +62,7 @@ export default function TeamSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                                     <div className="flex gap-2">
                                         {member.specialization?.slice(0, 2).map((spec) => (
-                                            <span key={spec} className="px-2 py-1 bg-white/20 backdrop-blur-md text-white text-[10px] uppercase font-bold rounded-lg border border-white/10">
+                                            <span key={spec} className="px-2 py-1 bg-white/20 backdrop-blur-md text-white text-xs uppercase font-bold rounded-lg border border-white/10">
                                                 {spec}
                                             </span>
                                         ))}
@@ -76,7 +76,7 @@ export default function TeamSection() {
                                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                                         <User size={16} />
                                     </div>
-                                    <span className="text-[10px] font-black uppercase text-primary tracking-widest bg-primary/5 px-3 py-1 rounded-full border border-primary/10">
+                                    <span className="text-xs font-black uppercase text-primary tracking-widest bg-primary/5 px-3 py-1 rounded-full border border-primary/10">
                                         {member.country}
                                     </span>
                                 </div>

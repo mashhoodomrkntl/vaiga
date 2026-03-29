@@ -99,7 +99,7 @@ export default function ContactPageClient() {
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-10 backdrop-blur-md"
                         >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                            <span className="text-primary-800 text-[10px] font-bold uppercase tracking-[0.25em]">
+                            <span className="text-primary-800 text-xs font-bold uppercase tracking-[0.25em]">
                                 Connect With Us
                             </span>
                         </motion.div>

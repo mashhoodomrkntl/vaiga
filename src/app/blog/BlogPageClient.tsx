@@ -93,10 +93,11 @@ export default function BlogPageClient() {
                                     className="group flex flex-col bg-white rounded-3xl border border-border overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
                                 >
                                     <Link href={`/blog/${blog.slug}`} className="relative h-60 overflow-hidden">
-                                        <img
+                                        <Image
                                             src={blog.image}
                                             alt={blog.title}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
                                         <div className="absolute top-4 left-4">
                                             <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-lg text-primary text-xs font-bold shadow-sm">

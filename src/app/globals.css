@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #1FBCC5;
-  --color-primary-dark: #168A91;
-  --color-primary-light: #E9F8F9;
-  --color-primary-50: #F1FBFC;
-  --color-primary-100: #D3F3F5;
-  --color-primary-200: #A7E7EA;
-  --color-primary-300: #7ADADB;
-  --color-primary-400: #4DCED1;
-  --color-primary-500: #1FBCC5;
-  --color-primary-600: #199A9F;
-  --color-primary-700: #13777A;
-  --color-primary-800: #0E5557;
-  --color-primary-900: #083334;
+  /* Deep Corporate Teal / Finance Palette */
+  --color-primary: #0F6B8A;
+  --color-primary-dark: #0A4A62;
+  --color-primary-light: #E1EFF3;
+  --color-primary-50: #F3F8FA;
+  --color-primary-100: #E1EFF3;
+  --color-primary-200: #C2DFE7;
+  --color-primary-300: #A0CEDB;
+  --color-primary-400: #7DBCCD;
+  --color-primary-500: #55A8BE;
+  --color-primary-600: #0F6B8A;
+  --color-primary-700: #0A4A62;
+  --color-primary-800: #073445;
+  --color-primary-900: #041B24;
 
   --color-navy: #0A192F;
   --color-navy-light: #112240;
@@ -150,7 +151,7 @@ h6 {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #1FBCC5 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -159,7 +160,7 @@ h6 {
 /* Blending Feel Utilities */
 .blend-bg-light {
   background: radial-gradient(circle at top left, var(--color-primary-50), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(31, 188, 197, 0.05), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(15, 107, 138, 0.05), transparent 40%),
     var(--color-surface);
 }
 

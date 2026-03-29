@@ -30,18 +30,50 @@ export const blogs: BlogPost[] = [
   },
   {
     id: "2",
-    title: "Why Zoho Books is the Best Cloud Accounting for UAE & Qatar",
-    slug: "benefits-of-zoho-books-uae-qatar",
+    title: "Why Zoho Books is the Best Cloud Accounting for UAE, India & Qatar",
+    slug: "benefits-of-zoho-books-uae-qatar-india",
     excerpt: "Discover why Zoho Books is the preferred choice for VAT-compliant accounting in the GCC and how Vaiga can help you transition.",
     content: `
-      <h2>The Rise of Cloud Accounting in the GCC</h2>
-      <p>With the implementation of VAT in the UAE and prospective changes in Qatar, cloud accounting has become a necessity for modern businesses...</p>
-      <h3>Benefits of Zoho Books</h3>
-      <ul>
-        <li>FTA-Accredited Accounting Software.</li>
-        <li>Multi-currency support for international trade.</li>
-        <li>Seamless integration with Zoho Inventory and CRM.</li>
+      <p class="mb-4 text-justify">Businesses in the UAE, Qatar, and India face complex tax regulations, multi-currency transactions, and strict e-invoicing mandates. Zoho Books is purpose-built for all three markets — delivering full compliance, local language support, and enterprise-level features at an affordable price.</p>
+      <br/>
+      <h2 class="mb-3.5">Tax Compliance — Built for Each Market</h2>
+      <p class="mb-4 text-justify font-medium">Zoho Books handles the full tax complexity across all three regions without needing third-party tools:</p>
+
+      
+      <ul class="mb-4 text-justify list-disc list-inside ml-5">
+        <li>UAE — 5% VAT calculations, VAT 201 return filing, FTA-compliant invoices
+</li>
+        <li>Qatar — GTA-aligned system reporting and structured invoice formats</li>
+        <li>India — CGST, SGST, IGST, TDS/TCS, GSTR-1, GSTR-3B, and GSTR-9 filing</li>
       </ul>
+      <br/>
+        <h3 class="mb-4 text-justify font-medium">Key Features at a Glance
+</h3>
+
+<ul class="mb-4 text-justify list-disc list-inside ml-5">
+        <li>170+ currencies with real-time forex tracking
+</li>
+        <li>Arabic, English & Hindi language support
+</li>
+        <li>Bank reconciliation with Emirates NBD, QNB, HDFC, ICICI, SBI & more
+
+</li>
+        <li> Financial reports — P&L, Balance Sheet, Cash Flow in one click
+
+</li>
+        <li>Inventory, payroll, project billing — all in one platform
+
+</li>
+        <li>Seamless Zoho ecosystem integration — CRM, Inventory, Analytics
+
+</li>
+        <li>Mobile access on iOS & Android for on-the-go management
+
+</li>
+      </ul>
+      <br/>
+      <p class="mb-4 text-justify font-medium">Zoho Books is the one platform that truly understands the UAE, Qatar, and India — covering local taxes, languages, banks, and e-invoicing mandates from a single dashboard.
+      </p>
     `,
     category: "Zoho",
     author: {
@@ -51,7 +83,7 @@ export const blogs: BlogPost[] = [
     date: "Feb 12, 2026",
     readingTime: "5 min",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    tags: ["Zoho Partner", "Cloud Accounting", "VAT Software"],
+    tags: ["Zoho Partner", "Cloud Accounting", "VAT Software", "Zoho Books", "VAT Compliance", "VAT Return Filing", 'Cloud Accounting Qatar'],
   },
   {
     id: "3",
