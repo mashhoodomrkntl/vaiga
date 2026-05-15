@@ -13,18 +13,40 @@ interface FAQProps {
     items: FAQItem[];
 }
 
+
+const staggerContainer = {
+    initial: {},
+    whileInView: {
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+    viewport: { once: true, margin: "-50px" },
+};
+
+const staggerItem = {
+    initial: { opacity: 0, y: 15 },
+    whileInView: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    },
+};
+
 export default function FAQ({ items }: FAQProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <div className="space-y-3">
+        <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="space-y-3"
+        >
             {items.map((item, index) => (
                 <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    viewport={{ once: true }}
+                    variants={staggerItem}
                     className="border border-border rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow"
                 >
                     <button
@@ -41,13 +63,13 @@ export default function FAQ({ items }: FAQProps) {
                                 }`}
                         />
                     </button>
-                    <AnimatePresence>
+                    <AnimatePresence initial={false}>
                         {openIndex === index && (
                             <motion.div
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
+                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                                 className="overflow-hidden"
                             >
                                 <p className="px-5 pb-4 md:px-6 md:pb-5 text-text-secondary text-sm leading-relaxed">
@@ -58,6 +80,7 @@ export default function FAQ({ items }: FAQProps) {
                     </AnimatePresence>
                 </motion.div>
             ))}
-        </div>
+        </motion.div>
     );
 }
+

@@ -38,10 +38,29 @@ const clients = [
 ];
 
 const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 },
+    viewport: { once: true, margin: "-50px" },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+};
+
+const staggerContainer = {
+    initial: {},
+    whileInView: {
+        transition: {
+            staggerChildren: 0.05,
+        },
+    },
+    viewport: { once: true, margin: "-50px" },
+};
+
+const staggerItem = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    },
 };
 
 export default function ClientsSection() {
@@ -96,7 +115,7 @@ export default function ClientsSection() {
     };
 
     return (
-        <section className="py-20 md:py-28 bg-white border-b border-border">
+        <section className="py-20 md:py-28 bg-white border-b border-border overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <motion.div {...fadeInUp} className="max-w-2xl">
@@ -132,18 +151,19 @@ export default function ClientsSection() {
                     </div>
                 </div>
 
-                <div
+                <motion.div
                     ref={scrollContainerRef}
+                    variants={staggerContainer}
+                    initial="initial"
+                    whileInView="whileInView"
                     className="flex gap-6 overflow-x-auto pb-8 -mx-6 px-6 sm:-mx-10 sm:px-10 lg:-mx-12 lg:px-12 scrollbar-hide"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {displayClients.map((client, index) => (
                         <motion.div
                             key={`${client.name}-${index}`}
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: (index % clients.length) * 0.05 }}
+                            variants={staggerItem}
+                            whileHover={{ y: -5, transition: { duration: 0.2 } }}
                             className="flex-shrink-0 w-[180px] md:w-[220px] flex items-center justify-center p-5 rounded-2xl bg-white border border-border/50 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group cursor-default h-32"
                         >
                             <div className="relative w-full h-full transition-all duration-500 p-2">
@@ -157,7 +177,7 @@ export default function ClientsSection() {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 <motion.p
                     initial={{ opacity: 0 }}

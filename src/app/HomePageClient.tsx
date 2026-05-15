@@ -43,11 +43,31 @@ import ClientsSection from "@/components/ClientsSection";
 import { useEffect } from "react";
 
 const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 },
+    viewport: { once: true, margin: "-50px" },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
 };
+
+const staggerContainer = {
+    initial: {},
+    whileInView: {
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+    viewport: { once: true, margin: "-50px" },
+};
+
+const staggerItem = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    },
+};
+
 
 const iconMap: Record<string, any> = {
     ShieldCheck,
@@ -245,25 +265,42 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
             {/* ===== HERO SECTION ===== */}
             <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary/15">
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]" />
+                    <motion.div 
+                        animate={{ 
+                            scale: [1, 1.1, 1],
+                            opacity: [0.1, 0.15, 0.1],
+                            x: [0, 20, 0],
+                            y: [0, -20, 0]
+                        }}
+                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                        className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-primary/20 rounded-full blur-[120px]" 
+                    />
+                    <motion.div 
+                        animate={{ 
+                            scale: [1, 1.2, 1],
+                            opacity: [0.05, 0.08, 0.05],
+                            x: [0, -30, 0],
+                            y: [0, 30, 0]
+                        }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="absolute bottom-[10%] right-[-5%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[140px]" 
+                    />
                     <div className="absolute inset-0 bg-gradient-to-b from-primary-50/50 via-white to-white" />
                     <div className="absolute inset-0 opacity-[0.03]"
                         style={{ backgroundImage: `radial-gradient(circle at 1px 1px, var(--color-primary) 1px, transparent 0)`, backgroundSize: '64px 64px' }}
                     />
                 </div>
 
+
                 <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-12 pb-12 text-center mt-12">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        variants={staggerContainer}
+                        initial="initial"
+                        animate="whileInView"
                         className="max-w-4xl mx-auto"
                     >
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.2, duration: 0.6 }}
+                            variants={staggerItem}
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-10 backdrop-blur-md"
                         >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -272,7 +309,10 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                             </span>
                         </motion.div>
 
-                        <h1 className="font-[var(--font-heading)] text-4xl md:text-6xl lg:text-7xl font-bold text-navy mb-8 tracking-tight leading-[1.15]">
+                        <motion.h1 
+                            variants={staggerItem}
+                            className="font-[var(--font-heading)] text-4xl md:text-6xl lg:text-7xl font-bold text-navy mb-8 tracking-tight leading-[1.15]"
+                        >
                             {currentHero.title.split(' ').slice(0, -2).join(' ')}{" "}
                             <span className="inline-block relative">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-600 to-primary-800">
@@ -281,17 +321,23 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                 <motion.div
                                     initial={{ width: 0 }}
                                     whileInView={{ width: '100%' }}
-                                    transition={{ delay: 0.8, duration: 0.8 }}
+                                    transition={{ delay: 1.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                                     className="absolute -bottom-2 left-0 h-1 bg-primary/20 rounded-full"
                                 />
                             </span>
-                        </h1>
+                        </motion.h1>
 
-                        <p className="text-text-secondary/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-14 font-medium">
+                        <motion.p 
+                            variants={staggerItem}
+                            className="text-text-secondary/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-14 font-medium"
+                        >
                             {currentHero.desc}
-                        </p>
+                        </motion.p>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <motion.div 
+                            variants={staggerItem}
+                            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+                        >
                             <Link
                                 href="/contact"
                                 className="group relative w-full sm:w-auto px-7 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-sm transition-all duration-300 shadow-2xl shadow-primary/20 hover:shadow-primary/40 flex items-center justify-center gap-3 overflow-hidden"
@@ -306,7 +352,8 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                             >
                                 Learn Our Story
                             </Link>
-                        </div>
+                        </motion.div>
+
 
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -382,16 +429,19 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <motion.div 
+                        variants={staggerContainer}
+                        initial="initial"
+                        whileInView="whileInView"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                    >
                         {countryServices.map((service, index) => {
                             const IconComponent = iconMap[service.icon] || ShieldCheck;
                             return (
                                 <motion.div
                                     key={service.title}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                                    viewport={{ once: true }}
+                                    variants={staggerItem}
+                                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
                                     className="bg-white rounded-2xl p-6 md:p-7 border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group"
                                 >
                                     <div className="w-14 h-14 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
@@ -420,7 +470,8 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                 </motion.div>
                             );
                         })}
-                    </div>
+                    </motion.div>
+
 
                     <motion.div {...fadeInUp} className="text-center mt-12">
                         <Link
@@ -464,14 +515,17 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8">
+                    <motion.div 
+                        variants={staggerContainer}
+                        initial="initial"
+                        whileInView="whileInView"
+                        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8"
+                    >
                         {industries.map((industry, index) => (
                             <motion.div
                                 key={industry.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.05, duration: 0.5 }}
-                                viewport={{ once: true }}
+                                variants={staggerItem}
+                                whileHover={{ y: -5, transition: { duration: 0.2 } }}
                                 className="bg-white/5 border border-white/10 rounded-2xl p-5 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 hover:bg-white/10 transition-all duration-300 group cursor-default hover:border-primary/30"
                             >
                                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
@@ -485,7 +539,8 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                 </span>
                             </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
+
                 </div>
             </section>
 
@@ -506,15 +561,17 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                         </p>
                     </motion.div>
 
-                    <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 ${filteredOffices.length === 1 ? 'flex justify-center md:flex' : ''}`}>
+                    <motion.div 
+                        variants={staggerContainer}
+                        initial="initial"
+                        whileInView="whileInView"
+                        className={`grid grid-cols-1 md:grid-cols-3 gap-6 ${filteredOffices.length === 1 ? 'flex justify-center md:flex' : ''}`}
+                    >
                         {filteredOffices.map((office, index) => (
                             <motion.div
                                 key={office.country}
+                                variants={staggerItem}
                                 className={filteredOffices.length === 1 ? 'max-w-md w-full mx-auto md:mx-0' : ''}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                viewport={{ once: true }}
                             >
                                 <Link
                                     href={office.href}
@@ -543,7 +600,8 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                 </Link>
                             </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
+
                 </div>
             </section>
 
@@ -768,14 +826,16 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                         </motion.div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <motion.div 
+                        variants={staggerContainer}
+                        initial="initial"
+                        whileInView="whileInView"
+                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    >
                         {blogs.slice(0, 3).map((blog, index) => (
                             <motion.article
                                 key={blog.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                viewport={{ once: true }}
+                                variants={staggerItem}
                                 className="group flex flex-col"
                             >
                                 <Link href={`/blog/${blog.slug}`} className="relative h-64 rounded-3xl overflow-hidden mb-6 block border border-border">
@@ -816,7 +876,8 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                 </Link>
                             </motion.article>
                         ))}
-                    </div>
+                    </motion.div>
+
                 </div>
             </section>
         </>

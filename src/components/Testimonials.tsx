@@ -17,6 +17,25 @@ interface TestimonialsProps {
     items: TestimonialItem[];
 }
 
+const staggerContainer = {
+    initial: {},
+    whileInView: {
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+    viewport: { once: true, margin: "-50px" },
+};
+
+const staggerItem = {
+    initial: { opacity: 0, x: 20 },
+    whileInView: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    },
+};
+
 export default function Testimonials({ items }: TestimonialsProps) {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -50,18 +69,19 @@ export default function Testimonials({ items }: TestimonialsProps) {
                 </button>
             </div>
 
-            <div
+            <motion.div
                 ref={scrollContainerRef}
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="whileInView"
                 className="flex gap-6 overflow-x-auto pb-4 -mx-6 px-6 sm:-mx-10 sm:px-10 lg:-mx-12 lg:px-12 scrollbar-hide snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 {items.map((item, index) => (
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05, duration: 0.5 }}
-                        viewport={{ once: true }}
+                        variants={staggerItem}
+                        whileHover={{ y: -5, transition: { duration: 0.2 } }}
                         className="flex-shrink-0 w-[85vw] md:w-[400px] relative bg-white border border-border rounded-2xl p-6 md:p-8 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group snap-center flex flex-col justify-between"
                     >
                         <div>
@@ -104,7 +124,8 @@ export default function Testimonials({ items }: TestimonialsProps) {
                         </div>
                     </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 }
+

@@ -56,8 +56,8 @@ export default function BlogPageClient() {
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
                                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${activeCategory === cat
-                                            ? "bg-primary text-white shadow-lg shadow-primary/25"
-                                            : "bg-white text-text-secondary hover:bg-primary-50 hover:text-primary border border-border"
+                                        ? "bg-primary text-white shadow-lg shadow-primary/25"
+                                        : "bg-white text-text-secondary hover:bg-primary-50 hover:text-primary border border-border"
                                         }`}
                                 >
                                     {cat}
