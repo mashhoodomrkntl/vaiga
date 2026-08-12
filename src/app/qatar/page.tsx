@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         "Accounting Software Qatar",
     ],
     alternates: {
-        canonical: "https://vaiga-xi.vercel.app/qatar",
+        canonical: "https://www.vaiga.org/qatar",
     },
 };
 

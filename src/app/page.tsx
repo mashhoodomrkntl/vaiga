@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Vaiga Consultancy Services (P) Ltd provides professional auditing, tax advisory, and accounting software implementation (Zoho, Tally, Odoo) across India, UAE, and Qatar.",
   alternates: {
-    canonical: "https://vaiga-xi.vercel.app",
+    canonical: "https://www.vaiga.org",
   },
 };
 

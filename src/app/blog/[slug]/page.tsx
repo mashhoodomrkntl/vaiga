@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
             description: blog.excerpt,
         },
         alternates: {
-            canonical: `https://vaiga-xi.vercel.app/blog/${resolvedParams.slug}`,
+            canonical: `https://www.vaiga.org/blog/${resolvedParams.slug}`,
         },
     };
 }

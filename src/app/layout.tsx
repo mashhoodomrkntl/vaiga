@@ -18,7 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vaiga-xi.vercel.app"),
+  metadataBase: new URL("https://www.vaiga.org"),
   title: {
     default:
       "Vaiga Consultancy | Audit, Tax & Accounting Services in India, UAE & Qatar",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vaiga-xi.vercel.app",
+    url: "https://www.vaiga.org",
     siteName: "Vaiga Consultancy",
     title:
       "Vaiga Consultancy | Audit, Tax & Accounting Services in India, UAE & Qatar",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://vaiga-xi.vercel.app",
+    canonical: "https://www.vaiga.org",
   },
   verification: {
     google: "6T8t8TcFYrLaoZKVPq69cH5_Ha4f3_wA1RIgztxeEnc",
@@ -126,8 +126,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Vaiga Consultancy Services (P) Ltd",
-                "url": "https://vaiga-xi.vercel.app",
-                "logo": "https://vaiga-xi.vercel.app/logo.png",
+                "url": "https://www.vaiga.org",
+                "logo": "https://www.vaiga.org/logo.png",
                 "foundingDate": "2011",
                 "description": "Professional auditing, tax advisory, and accounting consultancy firm with operations in India, UAE, and Qatar.",
                 "sameAs": []
@@ -136,9 +136,9 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "Vaiga Consultancy — Qatar (Best Zoho Partners & Financial Consultants)",
-                "image": "https://vaiga-xi.vercel.app/vaiga_logo.png",
-                "@id": "https://vaiga-xi.vercel.app/services/qatar",
-                "url": "https://vaiga-xi.vercel.app/services/qatar",
+                "image": "https://www.vaiga.org/vaiga_logo.png",
+                "@id": "https://www.vaiga.org/services/qatar",
+                "url": "https://www.vaiga.org/services/qatar",
                 "telephone": "+974-66437523",
                 "address": {
                   "@type": "PostalAddress",
@@ -159,9 +159,9 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "Vaiga Consultancy — UAE",
-                "image": "https://vaiga-xi.vercel.app/vaiga_logo.png",
-                "@id": "https://vaiga-xi.vercel.app/services/uae",
-                "url": "https://vaiga-xi.vercel.app/services/uae",
+                "image": "https://www.vaiga.org/vaiga_logo.png",
+                "@id": "https://www.vaiga.org/services/uae",
+                "url": "https://www.vaiga.org/services/uae",
                 "telephone": "+971-52-390-2880",
                 "address": {
                   "@type": "PostalAddress",
@@ -176,9 +176,9 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "Vaiga Consultancy — India",
-                "image": "https://vaiga-xi.vercel.app/vaiga_logo.png",
-                "@id": "https://vaiga-xi.vercel.app/services/india",
-                "url": "https://vaiga-xi.vercel.app/services/india",
+                "image": "https://www.vaiga.org/vaiga_logo.png",
+                "@id": "https://www.vaiga.org/services/india",
+                "url": "https://www.vaiga.org/services/india",
                 "telephone": "+91-89432-02011",
                 "address": {
                   "@type": "PostalAddress",

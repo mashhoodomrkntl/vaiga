@@ -354,7 +354,7 @@ export default function AboutPageClient() {
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
-                                href="https://vaiga-xi.vercel.app/assets/VaigaConsultanyServices.pdf"
+                                href="/assets/VaigaConsultanyServices.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-primary/25 hover:-translate-y-0.5"

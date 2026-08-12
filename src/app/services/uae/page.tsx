@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         "Tax filing UAE",
     ],
     alternates: {
-        canonical: "https://vaiga-xi.vercel.app/services/uae",
+        canonical: "https://www.vaiga.org/services/uae",
     },
     openGraph: {
         title: "Best Audit, VAT & Tax Consultancy in Dubai, UAE | Vaiga Consultancy",
         description:
             "Leading VAT consultancy and audit services in Dubai. Official Zoho and Tally implementation partners in the UAE.",
-        url: "https://vaiga-xi.vercel.app/services/uae",
+        url: "https://www.vaiga.org/services/uae",
     },
 };
 
@@ -36,7 +36,7 @@ export default function UAEServicesPage() {
                         "@context": "https://schema.org",
                         "@type": "ProfessionalService",
                         name: "Vaiga Consultancy Services — UAE",
-                        url: "https://vaiga-xi.vercel.app/services/uae",
+                        url: "https://www.vaiga.org/services/uae",
                         telephone: "+971-52-390-2880",
                         email: "services@vaiga.org",
                         address: {

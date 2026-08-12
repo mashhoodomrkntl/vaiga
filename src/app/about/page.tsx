@@ -6,13 +6,13 @@ export const metadata: Metadata = {
     description:
         "Learn about Vaiga Consultancy Services — our mission, vision, and 13+ years of excellence in audit, tax, and financial consulting across 3 countries.",
     alternates: {
-        canonical: "https://vaiga-xi.vercel.app/about",
+        canonical: "https://www.vaiga.org/about",
     },
     openGraph: {
         title: "About Vaiga Consultancy | Since 2011 — India, UAE & Qatar",
         description:
             "Our mission, vision, and 13+ years of excellence in audit, tax, and financial consulting.",
-        url: "https://vaiga-xi.vercel.app/about",
+        url: "https://www.vaiga.org/about",
     },
 };
 

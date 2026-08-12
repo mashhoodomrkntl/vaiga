@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         "Business setup UAE",
     ],
     alternates: {
-        canonical: "https://vaiga-xi.vercel.app/uae",
+        canonical: "https://www.vaiga.org/uae",
     },
 };
 

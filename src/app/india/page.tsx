@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         "Income Tax Filing India",
     ],
     alternates: {
-        canonical: "https://vaiga-xi.vercel.app/india",
+        canonical: "https://www.vaiga.org/india",
     },
 };
 

@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         "Business setup India",
     ],
     alternates: {
-        canonical: "https://vaiga-xi.vercel.app/services/india",
+        canonical: "https://www.vaiga.org/services/india",
     },
     openGraph: {
         title: "Audit, Tax & Chartered Accountant Services in India | Vaiga Consultancy",
         description:
             "Professional auditing, GST consultancy, and Tally/Zoho implementation in Kerala, India.",
-        url: "https://vaiga-xi.vercel.app/services/india",
+        url: "https://www.vaiga.org/services/india",
     },
 };
 
@@ -36,7 +36,7 @@ export default function IndiaServicesPage() {
                         "@context": "https://schema.org",
                         "@type": "ProfessionalService",
                         name: "Vaiga Consultancy Services — India",
-                        url: "https://vaiga-xi.vercel.app/services/india",
+                        url: "https://www.vaiga.org/services/india",
                         telephone: "+91-89432-02011",
                         email: "services@vaiga.org",
                         address: {

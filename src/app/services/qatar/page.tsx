@@ -15,13 +15,13 @@ export const metadata: Metadata = {
         "VAT Consultancy Qatar",
     ],
     alternates: {
-        canonical: "https://vaiga-xi.vercel.app/services/qatar",
+        canonical: "https://www.vaiga.org/services/qatar",
     },
     openGraph: {
         title: "Best Zoho Partners & Financial Consultants in Qatar | Vaiga Consultancy",
         description:
             "Top-rated Zoho Books partners and Tally implementation experts in Doha. Leading financial consultancy in Qatar.",
-        url: "https://vaiga-xi.vercel.app/services/qatar",
+        url: "https://www.vaiga.org/services/qatar",
     },
 };
 
@@ -36,7 +36,7 @@ export default function QatarServicesPage() {
                         "@context": "https://schema.org",
                         "@type": "ProfessionalService",
                         name: "Vaiga Consultancy Services — Qatar",
-                        url: "https://vaiga-xi.vercel.app/services/qatar",
+                        url: "https://www.vaiga.org/services/qatar",
                         telephone: "+974-66437523",
                         email: "audit@vaiga.org",
                         address: {
