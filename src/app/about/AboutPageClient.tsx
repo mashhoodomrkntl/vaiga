@@ -245,7 +245,7 @@ export default function AboutPageClient() {
             </section>
 
             {/* Team Section */}
-            <TeamSection />
+            {/* <TeamSection /> */}
 
             {/* Core Values */}
             <section className="py-20 md:py-28 bg-white">
