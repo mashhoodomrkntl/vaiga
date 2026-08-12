@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 interface TestimonialItem {
@@ -17,22 +17,21 @@ interface TestimonialsProps {
     items: TestimonialItem[];
 }
 
-const staggerContainer = {
+const staggerContainer: Variants = {
     initial: {},
     whileInView: {
         transition: {
             staggerChildren: 0.1,
         },
     },
-    viewport: { once: true, margin: "-50px" },
 };
 
-const staggerItem = {
+const staggerItem: Variants = {
     initial: { opacity: 0, x: 20 },
     whileInView: {
         opacity: 1,
         x: 0,
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
     },
 };
 

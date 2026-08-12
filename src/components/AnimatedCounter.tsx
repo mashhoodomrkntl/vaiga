@@ -45,7 +45,7 @@ export function AnimatedCounter({ end, suffix = "+", label }: CounterProps) {
                 className="text-4xl md:text-5xl font-[var(--font-heading)] font-bold text-primary block"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
             >
                 {count}
                 {suffix}

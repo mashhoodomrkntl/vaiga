@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
     ChevronLeft,
     ChevronRight
@@ -41,25 +41,24 @@ const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: "-50px" },
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
     initial: {},
     whileInView: {
         transition: {
             staggerChildren: 0.05,
         },
     },
-    viewport: { once: true, margin: "-50px" },
 };
 
-const staggerItem = {
+const staggerItem: Variants = {
     initial: { opacity: 0, y: 20 },
     whileInView: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
     },
 };
 

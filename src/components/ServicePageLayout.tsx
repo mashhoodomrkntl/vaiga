@@ -51,7 +51,7 @@ export default function ServicePageLayout({
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
                     >
                         <div className="flex items-center gap-2 mb-10 text-text-muted/60 text-xs font-semibold tracking-widest uppercase">
                             <Link href="/" className="hover:text-primary transition-colors">Home</Link>

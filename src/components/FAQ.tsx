@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 interface FAQItem {
@@ -14,22 +14,21 @@ interface FAQProps {
 }
 
 
-const staggerContainer = {
+const staggerContainer: Variants = {
     initial: {},
     whileInView: {
         transition: {
             staggerChildren: 0.1,
         },
     },
-    viewport: { once: true, margin: "-50px" },
 };
 
-const staggerItem = {
+const staggerItem: Variants = {
     initial: { opacity: 0, y: 15 },
     whileInView: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
     },
 };
 

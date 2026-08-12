@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
     ShieldCheck,
     FileText,
@@ -46,25 +46,24 @@ const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: "-50px" },
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
     initial: {},
     whileInView: {
         transition: {
             staggerChildren: 0.1,
         },
     },
-    viewport: { once: true, margin: "-50px" },
 };
 
-const staggerItem = {
+const staggerItem: Variants = {
     initial: { opacity: 0, y: 20 },
     whileInView: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
     },
 };
 
@@ -321,7 +320,7 @@ export default function HomePageClient({ forcedCountry }: HomePageClientProps) {
                                 <motion.div
                                     initial={{ width: 0 }}
                                     whileInView={{ width: '100%' }}
-                                    transition={{ delay: 1.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                                    transition={{ delay: 1.2, duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
                                     className="absolute -bottom-2 left-0 h-1 bg-primary/20 rounded-full"
                                 />
                             </span>
